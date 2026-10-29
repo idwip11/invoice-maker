@@ -1,0 +1,148 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+:root {
+  --background: #f5f2eb;
+  --foreground: #191816;
+  --card: #fcfbf8;
+  --card-foreground: #191816;
+  --popover: #fcfbf8;
+  --popover-foreground: #191816;
+  --primary: #c96442;
+  --primary-foreground: #fcfbf8;
+  --secondary: #ede8dd;
+  --secondary-foreground: #191816;
+  --muted: #efeae0;
+  --muted-foreground: #6e6a61;
+  --accent: #ede8dd;
+  --accent-foreground: #191816;
+  --border: #e2ddd2;
+  --input: #dcd6c8;
+  --ring: #c96442;
+  --radius: 0.5rem;
+
+  --font-serif: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  selection-background-color: #e8d5cc;
+}
+
+::selection {
+  background: #e8d3c8;
+  color: #191816;
+}
+
+.font-serif-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.field-label {
+  display: block;
+  color: #5c584f;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.2rem;
+}
+
+.field-input {
+  width: 100%;
+  border: 1px solid #dcd6c8;
+  border-radius: 0.45rem;
+  background: #ffffff;
+  color: #191816;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.35rem;
+  outline: none;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.field-input::placeholder {
+  color: #a39e93;
+}
+
+.field-input:hover {
+  border-color: #c8c0b0;
+}
+
+.field-input:focus {
+  border-color: #c96442;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(201, 100, 66, 0.12);
+}
+
+.invoice-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7d786d;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  body {
+    background: white;
+  }
+  .no-print {
+    display: none !important;
+  }
+  main {
+    background: white !important;
+  }
+  main > div {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  main > div > section {
+    display: block !important;
+  }
+  .invoice-paper {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    width: 100% !important;
+  }
+}
